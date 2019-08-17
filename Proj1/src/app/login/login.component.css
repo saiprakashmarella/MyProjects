@@ -1,0 +1,55 @@
+#login{
+    float: right;
+}
+#LoginModal .modal-body{
+    
+    height: 450px;
+    width: 800px;
+}
+.modal-dialog { 
+    max-width : auto ;
+    max-height: auto;
+    }
+
+#SignupModal .modal-body{
+    
+    height: 450px;
+    width: 800px;
+    
+    
+}
+#left{
+    height: 452px;
+    margin-top: -16px;
+    background: url(//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_dec4bf.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center 85%;
+
+    
+}
+#right{
+    height: 454px;
+    margin-top: -16px;
+}
+ #fields{
+    padding-left: 50px; 
+    padding-right: 25px;
+}
+#lfields{
+    padding-left: 50px; 
+    padding-right: 25px;
+}
+#top{
+    height:300px;
+    
+    
+}
+#top .header{
+    font-size: 29px;
+    
+}
+.col-sm-4 #right {
+    height: 552px;
+    margin-top: -16px;
+}

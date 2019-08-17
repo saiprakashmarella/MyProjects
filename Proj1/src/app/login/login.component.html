@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+    <div class="container-fluid">
+
+  <!-- Button to Open the Modal -->
+  
+  <button id="login" type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoginModal">
+      Login/SignUp
+    </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="LoginModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+                <div class="row">
+                  <div class="col-2 col-sm-3  col-md-3 col-lg-4 col-xl-4" id='left' style="background-color:#2874f0">
+                    <div class="row" id="top">
+                      <p id="lfields" class="header" style="color:white;">Login<br/>
+                      <span style="font-size: 1vw;font-size: 15px">Get early access to  latest offers and rewards</span></p>
+                    </div>
+                    <div class="row" id="fields"></div>
+                  </div>
+                  <div class="col-6 col-sm-7 col-md-7 col-lg-7 col-xl-8 col-xs-3" id='right'>
+                  <form>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="form-group row">
+                    <label for="email" id="fields" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                        <input type="text" class="form-control" id="email" value="" placeholder="Email Address">
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label for="password" id="fields" class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                  </div>
+                
+                  <div class="form-group row">
+                    <label for="remember" id="fields" class="col-sm-3 col-form-label"></label>
+                    <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                        <input type="checkbox" name="remember"> Remember me
+                  </div>
+                </div>
+                <div class="form-group row">        
+                    <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                    <div class=" col-6 col-lg-6 col-xl-6 col-md-6 col-sm-3 col-xs-3">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                
+              
+              <div class="form-group row">        
+                  <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                  <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-3 col-xs-2">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#SignupModal">New? Sign up here</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+              
+          
+              </div>
+        </div>
+        
+        
+        <!-- Modal footer 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      -->
+        
+      </div>
+    </div>
+
+  </div>
+  <div class="modal fade" id="SignupModal">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">SignUp</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+                  <div class="row">
+                    <div class="col-2 col-sm-3  col-md-3 col-lg-4 col-xl-4" id='left' style="background-color:#2874f0">
+                      <div class="row" id="top">
+                        <p id="lfields" class="header" style="color:white;">Signup<br/>
+                        <span style="font-size: 1vw;font-size: 15px">we do not share your personal details</span></p>
+                      </div>
+                      <div class="row" id="fields"></div>
+                    </div>
+                    <div class="col-6 col-sm-7 col-md-7 col-lg-7 col-xl-8 col-xs-3" id='right'>
+                        <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+                          <br/>
+                          <div class="form-group row">
+                            <label for="email" id="fields" class="col-sm-3 col-form-label">Username</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                                <input type="text" required class="form-control" #name="ngModel" 
+                                [class.is-invalid]="name.invalid && name.touched" 
+                                name="Username" [(ngModel)]="UserModel.name" placeholder="Username">
+                                <div *ngIf="name.errors &&(name.invalid || name.touched)">
+                                  <small class="text-danger" *ngIf="name.errors.required">Name is required</small>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                            <label for="password" id="fields" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                                <input type="password" #password="ngModel" required  class="form-control" 
+                                name="password" [(ngModel)]="UserModel.password" placeholder="Password">
+                            </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                              <label for="password" id="fields" class="col-sm-3 col-form-label">Email</label>
+                              <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                                  <input type="Email" #email="ngModel" class="form-control" name="Email"
+                                  required [(ngModel)]="UserModel.email" placeholder="Email">
+                              </div>
+                            </div>
+                            
+                          <div class="form-group row">
+                              <label for="phone"   id="fields" class="col-sm-3 col-form-label">Mobile</label>
+                              <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                                  <input type="Number"required  #phone="ngModel" pattern="^\d{10}$" class="form-control"
+                                  [class.is-invalid]="phone.invalid && phone.touched" [(ngModel)]="UserModel.phone" name="phone" placeholder="phone no">  
+                                  <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+                                    <small class="text-danger" *ngIf="phone.errors.required">Phone number is required</small>
+                                    <small class="text-danger" *ngIf="phone.errors.pattern">phone number must be 10 digits</small>
+                                  </div> 
+                              </div>
+                            </div>
+                          <div class="form-group row">
+                            <label for="remember" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                                <input type="checkbox" [(ngModel)]="UserModel.subscription" name="remember"> Terms and Conditions
+                          </div>
+                        </div>
+                        <div class="form-group row">        
+                            <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                          </div>
+                        
+                      
+                      <div class="form-group row">        
+                          <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                          <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                            <a data-dismiss="modal" href="" data-toggle="modal" data-target="#LoginModal">Already an exist Customer?</a>
+                          </div>
+                        </div>
+                      </form>
+                        
+              </div>
+                
+            
+                </div>
+          </div>
+          
+          
+          <!-- Modal footer 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        -->
+          
+        </div>
+      </div>
+  
+    </div>
+  
+  <!-- Singup-->
+    
+  
+    
+  
+
+
+</div>
+<div class="dropdown">
+    <button class="btn btn-primary" data-toggle="dropdown">Profile</button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+    </div>
+</div>
+</body>
+</html>

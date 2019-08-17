@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-light navbar-light">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/Images/logo.png" alt="Logo" style="width:40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Furniture</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown" id="dd">
+            <a class="nav-link" href="#">Electronics</a>
+            <div class="dropdown-menu" id="ddm">
+              <a class="dropdown-item" href="#">Laptops</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown dropright" id="dd2">
+                <a class="dropdown-item" href="#">Smartphones</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-menu" id="ddm2">
+                  <a class="dropdown-item" href="">Samsung</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Apple</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Oneplus</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Vivo</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Realme</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </div>
+              <a class="dropdown-item" href="#">Accessories</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">TV's & appliances</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown" id="dd3">
+            <a class="nav-link" href="#">Clothing</a>
+            <div class="dropdown-menu" id="ddm3">
+              <a class="dropdown-item">Mens</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item">Womens</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item">KidsWear</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="padding-right: 40px">Offers Zone</a>
+        </li>
+        <li>
+          <form class="form-inline">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="search" style="width: 440px;padding-right: 100px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-search" style="font-size:15px;"></i></span>
+              </div>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item">
+          <div class="container-fluid" id="login_toggle">
+
+            <!-- Button to Open the Modal -->
+
+            <button id="login" type="button" class="btn btn-primary" data-toggle="modal" style="margin-left: 60px;"
+              data-target="#LoginModal">
+              Login/SignUp
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal fade" id="LoginModal">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-2 col-sm-3  col-md-3 col-lg-4 col-xl-4" id='left'
+                        style="background-color:#2874f0">
+                        <div class="row" id="top">
+                          <p id="lfields" class="header" style="color:white;">Login<br />
+                            <span style="font-size: 1vw;font-size: 15px">Get early access to latest offers and
+                              rewards</span></p>
+                        </div>
+                        <div class="row" id="fields"></div>
+                      </div>
+                      <div class="col-6 col-sm-7 col-md-7 col-lg-7 col-xl-8 col-xs-3" id='right'>
+                        <form>
+                          <br />
+                          <br />
+                          <br />
+                          <div class="form-group row">
+                            <label for="email" id="fields" class="col-sm-3 col-form-label">User</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="text" class="form-control" id="email" [(ngModel)]="log.user" name="user"
+                                value="" placeholder="Username">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="password" id="fields" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="password" class="form-control" id="password" [(ngModel)]="log.password"
+                                name="pswd" value="" placeholder="Password">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label for="remember" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="checkbox" [(ngModel)]="log.rember" name="remember"> Remember me
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class=" col-6 col-lg-6 col-xl-6 col-md-6 col-sm-3 col-xs-3">
+                              <button type="submit" data-dismiss="modal" (click)="login()" class="btn btn-primary"
+                                id="login_submit">Submit</button>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row">
+                            <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-3 col-xs-2">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                                data-target="#SignupModal">New? Sign up here</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+                  <!-- Modal footer 
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    -->
+
+                </div>
+              </div>
+
+            </div>
+            <div class="modal fade" id="SignupModal">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">SignUp</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-2 col-sm-3  col-md-3 col-lg-4 col-xl-4" id='left'
+                        style="background-color:#2874f0">
+                        <div class="row" id="top">
+                          <p id="lfields" class="header" style="color:white;">Signup<br />
+                            <span style="font-size: 1vw;font-size: 15px">we do not share your personal details</span>
+                          </p>
+                        </div>
+                        <div class="row" id="fields"></div>
+                      </div>
+                      <div class="col-6 col-sm-7 col-md-7 col-lg-7 col-xl-8 col-xs-3" id='right'>
+                        <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+                          <br />
+                          <div class="form-group row">
+                            <label for="email" id="fields" class="col-sm-3 col-form-label">Username</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="text" required class="form-control" #name="ngModel"
+                                [class.is-invalid]="name.invalid && name.touched" name="Username"
+                                [(ngModel)]="UserModel.name" placeholder="Username">
+                              <div *ngIf="name.errors &&(name.invalid || name.touched)">
+                                <small class="text-danger" *ngIf="name.errors.required">Name is required</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="password" id="fields" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="password" #password="ngModel" required class="form-control" name="password"
+                                [(ngModel)]="UserModel.password" placeholder="Password">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label for="password" id="fields" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="Email" #email="ngModel" class="form-control" name="Email" required
+                                [(ngModel)]="UserModel.email" placeholder="Email">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label for="phone" id="fields" class="col-sm-3 col-form-label">Mobile</label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="Number" required #phone="ngModel" pattern="^\d{10}$" class="form-control"
+                                [class.is-invalid]="phone.invalid && phone.touched" [(ngModel)]="UserModel.phone"
+                                name="phone" placeholder="phone no">
+                              <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+                                <small class="text-danger" *ngIf="phone.errors.required">Phone number is
+                                  required</small>
+                                <small class="text-danger" *ngIf="phone.errors.pattern">phone number must be 10
+                                  digits</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="remember" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <input type="checkbox" [(ngModel)]="UserModel.subscription" name="remember"> Terms and
+                              Conditions
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row">
+                            <label for="submit" id="fields" class="col-sm-3 col-form-label"></label>
+                            <div class="col-6 col-lg-6 col-xl-6 col-md-6 col-sm-4 col-xs-3">
+                              <a data-dismiss="modal" href="" data-toggle="modal" data-target="#LoginModal">Already an
+                                exist Customer?</a>
+                            </div>
+                          </div>
+                        </form>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+
+                  <!-- Modal footer 
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      -->
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="contained" id="profile_toggle">
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- slideshow-->
+  <div id="slideshow" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+      <li data-target="#slideshow" data-slide-to="1"></li>
+      <li data-target="#slideshow" data-slide-to="2"></li>
+      <li data-target="#slideshow" data-slide-to="3"></li>
+      <li data-target="#slideshow" data-slide-to="4"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).jpg" alt="offers" class="img-fluid">
+
+        <div class="carousel-caption">
+          <h3>Los Angeles</h3>
+          <p>We had such a great time in LA!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(1).jpg" alt="offers" class="img-fluid">
+
+        <div class="carousel-caption">
+          <h3>Nature</h3>
+          <p>What a beauty!</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg" alt="offers" class="img-fluid">
+
+        <div class="carousel-caption">
+          <h3>Heaven</h3>
+          <p>Experience the beauty!</p>
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(5).jpg" alt="offers" class="img-fluid">
+
+        <div class="carousel-caption">
+          <h3>Peace</h3>
+          <p>Believe in peace!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(11).jpg" alt="offers" class="img-fluid">
+
+        <div class="carousel-caption">
+          <h3>Peace</h3>
+          <p>Believe in peace!</p>
+        </div>
+      </div>
+
+    </div>
+    <a class="carousel-control-prev" href="#slideshow" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#slideshow" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+
+  </div>
+  <div></div>
+  <div id="Divider">
+    <br />
+  </div>
+  <!-- Cards-->
+  <div class="row" style="margin-bottom: 15px;margin-top: 2px;">
+    <br />
+    <div id="card_sections">
+      <div>
+        <h1 id="DOD">Deals of the day</h1>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/card1.jpg" alt="laptop">
+        <div class="card-body">
+          <h4 class="card-title">HP 15q APU Dual</h4>
+          <p class="card-text">Intel Core I5</p>
+          <p class="card-text">8GB Ram,1TB HDD</p>
+          <p class="card-text">64bit Windows 10</p>
+          <p class="card-text">14Inch Display</p>
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div id="card_sections" style="margin-top: 8px;">
+      <br />
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/card1.jpg" alt="laptop">
+        <div class="card-body">
+          <h4 class="card-title">Dell Vostro</h4>
+          <p class="card-text">AMD APU Dual core</p>
+          <p class="card-text">8GB Ram,1TB HDD</p>
+          <p class="card-text">64bit Windows 10</p>
+          <p class="card-text">14Inch Display</p>
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="card_sections" style="margin-top: 8px;">
+      <br />
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/card1.jpg" alt="laptop">
+        <div class="card-body">
+          <h4 class="card-title">Asus Vivobook</h4>
+          <p class="card-text">Intel core I9</p>
+          <p class="card-text">8GB Ram,2TB HDD</p>
+          <p class="card-text">64bit Windows 10</p>
+          <p class="card-text">14Inch Display,NVIDIA Graphics</p>
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div id="card_sections" style="margin-top: 8px;margin-right: 0px;">
+      <br />
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/card1.jpg" alt="laptop">
+        <div class="card-body">
+          <h4 class="card-title">Asus Pentium</h4>
+          <p class="card-text">AMD APU Dual core</p>
+          <p class="card-text">4GB Ram,1TB HDD</p>
+          <p class="card-text">64bit Windows 10</p>
+          <p class="card-text">14Inch Display</p>
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Divider">
+    <br />
+  </div>
+  <div class="row">
+    <br />
+    <div id="card_sections">
+      <div>
+        <h1 id="DOD">Deals of the day</h1>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/Card2.jpg" alt="laptop">
+        <div class="card-body">
+          <h4 class="card-title">Samsung S10</h4>
+          <p class="card-text">Snapdragon 855</p>
+          <p class="card-text">8GB Ram,256GB ROM</p>
+          <p class="card-text">Android 9 PIE</p>
+          <p class="card-text">6.4Inch SuperAmoled</p>
+
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div id="card_sections" style="margin-top: 8px;">
+      <br />
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/Card2.jpg" alt="laptop">
+        <div class="card-body">
+
+          <h4 class="card-title">Oneplus7 pro</h4>
+          <p class="card-text">Snapdragon 855</p>
+          <p class="card-text">8GB Ram,256GB ROM,90HZs</p>
+          <p class="card-text">Android 9 PIE</p>
+          <p class="card-text">6.4Inch SuperAmoled</p>
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="card_sections" style="margin-top: 8px;">
+      <br />
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/Card2.jpg" alt="laptop">
+        <div class="card-body">
+
+          <h4 class="card-title">Iphone XS max</h4>
+          <p class="card-text">A12 bionic</p>
+          <p class="card-text">8GB Ram,256GB ROM</p>
+          <p class="card-text">IOS 13</p>
+          <p class="card-text">6.4Inch Retina Display</p>
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div id="card_sections" style="margin-top: 8px;margin-right: 0px;">
+      <br />
+      <div class="card">
+        <img class="card-img-top" src="../../assets/Images/Card2.jpg" alt="laptop">
+        <div class="card-body">
+
+          <h4 class="card-title">HAUWAIE P30pro</h4>
+          <p class="card-text">KIRIN 780 </p>
+          <p class="card-text">8GB Ram,256GB ROM</p>
+          <p class="card-text">Android 9 PIE</p>
+          <p class="card-text">6.4Inch SuperAmoled</p>
+          <a class="btn btn-primary btn-sm stretched-link" href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>

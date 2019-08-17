@@ -1,0 +1,26 @@
+#dd1 {
+  margin-left: 30px;
+  margin-top: 40px;
+
+}
+
+#dm1 {
+  width: 240px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: aquamarine;
+}
+
+#box {
+  background-color: whitesmoke;
+  width: 400px;
+  border: 15px solid palevioletred;
+  padding: 50px;
+  height: 400px;
+  margin: 20px;
+}
+
+#sddb {
+  width: 240px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: aquamarine;
+}
